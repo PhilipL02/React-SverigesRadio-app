@@ -60,7 +60,7 @@ export default function SearchDropdown(){
                     </div>
                 )
             })}
-            {searchResults.length >= 10 ? <div className='showMoreSearchRes' onClick={event=>(setShowMoreSearchResults(true))}><p>Visa fler sökresultat</p></div> : ""}
+            {searchResults.length >= 10 ? <div className='showMoreSearchRes' onClick={event=>(setShowMoreSearchResults(true),selectSearched(""),selectChannel(""))}><p>Visa fler sökresultat</p></div> : ""}
         </div>
     )
 }

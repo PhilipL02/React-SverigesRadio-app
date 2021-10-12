@@ -5,7 +5,7 @@ import Context from '../Context';
 
 export default function Header() {
 
-    const {channels, selectChannel, selectSearched, setShowNews, showNews, search, setSearch} = useContext(Context);
+    const {channels, selectChannel, selectSearched, setShowNews, showNews, search, setSearch, setShowMoreSearchResults} = useContext(Context);
 
     function showChannel(channel){
         selectChannel(channel)
@@ -13,7 +13,7 @@ export default function Header() {
     return (
         <header>
             <div className='headerDiv'>
-            <Link to="/"><img onClick={event=>(showChannel(""),selectSearched(""), setShowNews(false))} className='SRImg' src='https://irismedia.se/wp-content/uploads/sr.png'></img></Link>
+            <Link to="/"><img onClick={event=>(showChannel(""),selectSearched(""), setShowNews(false),setShowMoreSearchResults(false))} className='SRImg' src='https://irismedia.se/wp-content/uploads/sr.png'></img></Link>
                 <div className='headerButtons'>
                 <div className="dropdown">
                     <button className="dropbtn">Kanaler</button>
