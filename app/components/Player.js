@@ -1,6 +1,5 @@
-import React, {useState, useEffect, useContext, useRef} from 'react';
-import { IoPause, IoPlay, IoVolumeMedium, IoVolumeMute } from 'react-icons/io5';
-import Context from '../Context';
+import React, {useState, useEffect, useRef} from 'react';
+import { IoPause, IoPlay } from 'react-icons/io5';
 
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';

@@ -1,5 +1,4 @@
 import React, {useState, useEffect, useContext} from 'react'
-import { IoSearch } from 'react-icons/io5';
 import Context from '../Context';
 
 export default function SearchDropdown(){
@@ -54,8 +53,8 @@ export default function SearchDropdown(){
                     <div className='searchRes' key={res.id} onClick={event=>(showSearched(res))}>
                         <img src={res.imageurl}/>
                         <div>
-                            <a>{res.title.length<31 ? res.title : res.title.substring(0, 30)+"..."}</a>
-                            <p>{getPublishDate(res)}</p>
+                            <a>{res.title.length<31 ? res.title : res.title.substring(0, 30).trim() + "..."}</a>
+                            <p>Publicerad: {getPublishDate(res)}</p>
                         </div>
                     </div>
                 )

@@ -1,18 +1,14 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 
 import Context from '../Context';
 
 import Channel from './Channel';
 import Episode from './Episode';
-import NewsContainer from './NewsContainer';
-import ActiveNews from './ActiveNews';
 import SearchResults from './SearchResults';
 
 export default function Main() {
 
-    const {channel, searched, showNews, activeNews, search, showMoreSearchResults} = useContext(Context);
-
-    const [hidden, setHidden] = useState(false);
+    const {channel, searched, showMoreSearchResults} = useContext(Context);
 
     if(channel)
     return (
@@ -25,13 +21,6 @@ export default function Main() {
     return (
         <main>
             <Episode/>
-        </main>
-    )
-
-    if(showNews)
-    return (
-        <main>
-            <NewsContainer/>
         </main>
     )
 

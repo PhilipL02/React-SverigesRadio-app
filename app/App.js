@@ -14,19 +14,19 @@ export default function App() {
     const [channel, selectChannel] = useState('');
     const [search, setSearch] = useState("");
     const [searched, selectSearched] = useState('');
-    const [showNews, setShowNews] = useState(false)
-    const [activeNews, setActiveNews] = useState("");
     const [showMoreSearchResults, setShowMoreSearchResults] = useState(false)
+    const [favorites, setFavorites] = useState([]);
 
     useEffect(async ()=>{
         let response = await fetch('https://api.sr.se/api/v2/channels/?format=json');
         let data = await response.json();
         let channels = data.channels;
         setChannel(channels);
+        setFavorites(JSON.parse(localStorage.getItem("favorites")))
     },[]);
 
     return (
-        <Context.Provider value={{channels, channel, selectChannel, search, setSearch, searched, selectSearched, showMoreSearchResults, setShowMoreSearchResults, showNews, setShowNews, activeNews, setActiveNews}}>
+        <Context.Provider value={{channels, channel, selectChannel, search, setSearch, searched, selectSearched, showMoreSearchResults, setShowMoreSearchResults, favorites, setFavorites}}>
             <Router>
                 <Header/>
                 <Switch>
