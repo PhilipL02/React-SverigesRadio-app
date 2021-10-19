@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 
-import {BrowserRouter as Router, Switch, Link, Route} from 'react-router-dom'
-
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
@@ -16,6 +14,7 @@ export default function App() {
     const [searched, selectSearched] = useState('');
     const [showMoreSearchResults, setShowMoreSearchResults] = useState(false)
     const [favorites, setFavorites] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
 
     useEffect(async ()=>{
         let response = await fetch('https://api.sr.se/api/v2/channels/?format=json');
@@ -26,14 +25,10 @@ export default function App() {
     },[]);
 
     return (
-        <Context.Provider value={{channels, channel, selectChannel, search, setSearch, searched, selectSearched, showMoreSearchResults, setShowMoreSearchResults, favorites, setFavorites}}>
-            <Router>
-                <Header/>
-                <Switch>
-                    <Main/>
-                </Switch>
-                <Footer/>
-            </Router>
+        <Context.Provider value={{channels, channel, selectChannel, search, setSearch, searched, selectSearched, showMoreSearchResults, setShowMoreSearchResults, favorites, setFavorites, searchResults, setSearchResults}}>
+            <Header/>
+            <Main/>
+            <Footer/>
         </Context.Provider>
     )
 }

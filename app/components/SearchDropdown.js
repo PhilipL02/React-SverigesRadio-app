@@ -3,9 +3,7 @@ import Context from '../Context';
 
 export default function SearchDropdown(){
 
-    const {selectSearched, selectChannel, search, setShowMoreSearchResults} = useContext(Context);
-
-    const [searchResults, setSearchResults] = useState([]);
+    const {selectSearched, selectChannel, search, setShowMoreSearchResults, searchResults, setSearchResults} = useContext(Context);
 
     function showSearched(chosen){
         selectSearched(chosen);
@@ -16,7 +14,6 @@ export default function SearchDropdown(){
         let response = await fetch('https://api.sr.se/api/v2/episodes/search/?format=json&size=10&query='+search);
         let data = await response.json();
         let episodes = data.episodes;
-        console.log(episodes);
         setSearchResults(episodes); 
     },[search]);
     
