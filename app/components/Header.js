@@ -14,9 +14,9 @@ export default function Header() {
             <div className='headerDiv'>
                 <img onClick={event=>(showChannel(""),selectSearched(""),setShowMoreSearchResults(false))} className='SRImg' src='https://irismedia.se/wp-content/uploads/sr.png'></img>
                 <div className='headerButtons'>
-                    <div className="dropdown">
-                        <button className="dropbtn">Kanaler</button>
-                        <div className="dropdown-content">
+                    <div className="dropdownChannels">
+                        <button className="dropChannelsBtn">Kanaler</button>
+                        <div className="dropdownChannelsContent">
                             {channels.map(c=>{
                                 return(
                                     <div className='menuChannel' key={c.id}>
@@ -32,9 +32,9 @@ export default function Header() {
                     <input onChange={event=>(setSearch(event.target.value))} type='text' name='search' placeholder="Sök efter program"/>
                     {search ? <SearchDropdown/> : ""}
                 </div>
-                <div className="dropdown2">
-                    <button className="dropbtn2">Dina favoriter</button>
-                    <div className="dropdown-content2">
+                <div className="dropdownFavorites">
+                    <button className="dropFavoritesBtn">Dina favoriter</button>
+                    <div className="dropdownFavoritesContent">
                         {favorites ? favorites.map(f=>{
                             return(
                                 <div className='menuFavorites' key={f.id} onClick={event=>(selectSearched(f), selectChannel(""))}>

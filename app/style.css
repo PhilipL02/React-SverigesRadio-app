@@ -1,10 +1,14 @@
 *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body { font-family: Arial }
+body{ 
+  font-family: Arial;
+  position: relative;
+  min-height: 100vh; 
+}
 
 header{
   height: 50px;
@@ -79,12 +83,12 @@ header .SRImg{
   display: none;
 }
 
-.dropdown{
+.dropdownChannels{
   width: 85px;
   height: 100%;
 }
 
-.dropdown .dropbtn {
+.dropdownChannels .dropChannelsBtn {
   font-size: 16px;    
   border: none;
   outline: none;
@@ -95,7 +99,7 @@ header .SRImg{
   font-family: inherit;
 }
 
-.dropdown-content {
+.dropdownChannelsContent {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -104,7 +108,7 @@ header .SRImg{
   z-index: 1;
 }
 
-.dropdown-content a {
+.dropdownChannelsContent a {
   color: black;
   padding: 12px 12px;
   text-decoration: none;
@@ -112,18 +116,18 @@ header .SRImg{
   text-align: left;
 }
 
-.dropdown:hover .dropbtn {
+.dropdownChannels:hover .dropChannelsBtn {
   background-color: rgb(125, 125, 125);
   color: white;
 }
 
-.dropdown-content a:hover {
+.dropdownChannelsContent a:hover {
   background-color: #ddd;
   color: black;
   cursor: pointer;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdownChannels:hover .dropdownChannelsContent {
   display: block;
 }
 
@@ -135,12 +139,12 @@ header .SRImg{
     width: 100%;
 }
 
-.dropdown2{
+.dropdownFavorites{
   width: 120px;
   height: 50px;
 }
 
-.dropdown2 .dropbtn2 {
+.dropdownFavorites .dropFavoritesBtn {
   font-size: 16px;    
   border: none;
   outline: none;
@@ -151,7 +155,7 @@ header .SRImg{
   font-family: inherit;
 }
 
-.dropdown-content2 {
+.dropdownFavoritesContent {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -160,12 +164,12 @@ header .SRImg{
   z-index: 1;
 }
 
-.dropdown2:hover .dropbtn2 {
+.dropdownFavorites:hover .dropFavoritesBtn {
   background-color: rgb(125, 125, 125);
   color: white;
 }
 
-.dropdown-content2 a:hover {
+.dropdownFavoritesContent a:hover {
   background-color: #ddd;
   color: black;
   cursor: pointer;
@@ -193,7 +197,7 @@ header .SRImg{
   object-fit: cover;
 }
 
-.dropdown2:hover .dropdown-content2 {
+.dropdownFavorites:hover .dropdownFavoritesContent {
   display: block;
 }
 
@@ -413,7 +417,7 @@ header .SRImg{
 footer{
   border-top: 2px solid rgba(0, 0, 0, 0.2);
   height: 60px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   color: white;

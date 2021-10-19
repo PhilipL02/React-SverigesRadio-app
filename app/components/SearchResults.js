@@ -42,9 +42,9 @@ export default function SearchResults() {
             <div style={{display:'flex', flexWrap: 'wrap'}}>
             {moreSearchResults.map(res=>{
                 return (
-                    <div key={res.id} style={{width:'10.5%', margin:'1%'}}>
+                    <div className='oneSearchResult' key={res.id} style={{width:'10.5%', margin:'1%'}}>
                         <img src={res.imageurl} width='100%' />
-                        <p>{res.title}</p>
+                        <p>{res.title.length<31 ? res.title : res.title.substring(0, 30).trim() + "..."}</p>
                     </div>
                 )
             })}
